@@ -1,0 +1,61 @@
+/* line 4, /Users/trevorfrese/uber_for_segway/app/assets/stylesheets/landing.scss */
+body {
+  margin: 0;
+}
+
+/* line 8, /Users/trevorfrese/uber_for_segway/app/assets/stylesheets/landing.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+  /*!important; background-color: #FCFBF0; */
+}
+
+/*===Images===*/
+/* line 15, /Users/trevorfrese/uber_for_segway/app/assets/stylesheets/landing.scss */
+.cover_image {
+  background: url("michael.jpg") no-repeat fixed;
+  width: 100%;
+  height: 660px;
+  padding-left: 0;
+  padding-right: 0;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  min-height: 100%;
+  min-width: 100%;
+  box-sizing: content-box;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+/* line 36, /Users/trevorfrese/uber_for_segway/app/assets/stylesheets/landing.scss */
+.overlay {
+  opacity: .37;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

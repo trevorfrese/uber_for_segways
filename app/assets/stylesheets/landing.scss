@@ -1,3 +1,75 @@
 // Place all the styles related to the landing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  margin: 0;
+}
+
+html, body{
+  height:100%;
+  width:100%;
+  /*!important; background-color: #FCFBF0; */
+}
+
+/*===Images===*/
+.cover_image {
+  background: url("michael.jpg") no-repeat fixed;
+  width: 100%;
+  height: 660px;
+  padding-left: 0;
+  padding-right: 0;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  min-height: 100%;
+  min-width: 100%;
+  box-sizing: content-box;
+  position:relative;
+  left:0;
+  top:0;
+  z-index: 1;
+}
+
+.overlay{
+  opacity: .37;
+  background-color: black;
+  position: absolute;
+  left: 0; top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/*===Titles===*/
+.centered_title {
+  font-family: 'Arvo', serif;
+  position:relative;
+  top: 50%;
+  left: 50%;
+  font-size: 6vw;
+  text-align:center;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: white;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.centered_subtitle {
+  font-family: 'Arvo', serif;
+  position:relative;
+  top: 45%;
+  left: 50%;
+  font-size: 3vw;
+  text-align:center;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: white;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
