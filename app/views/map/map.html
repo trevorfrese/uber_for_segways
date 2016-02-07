@@ -1,0 +1,9 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6ebwZ0mThltW20PwNkk9F4WDrmqaRjVY&&callback=initMap&libraries=places"
+        async defer></script>
+<%= javascript_tag do %>
+<%= render 'map/search_functions' %>
+
+<% end %>
+
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div id="map"></div>

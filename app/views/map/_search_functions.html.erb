@@ -1,0 +1,96 @@
+
+/* Google maps code */
+
+// This example adds a search box to a map, using the Google Place Autocomplete
+// feature. People can enter geographical searches. The search box will return a
+// pick list containing a mix of places and predicted search terms.
+
+console.log("javascript");
+var map;
+function initMap() {
+ alert("Im calling all the segway drivers around you. Hold on.");
+}
+
+navigator.geolocation.getCurrentPosition(GetLocation);
+function GetLocation(location) {
+
+
+    console.log("hello");
+    console.log(location.coords.latitude);
+    console.log(location.coords.longitude);
+    console.log(location.coords.accuracy);
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: location.coords.latitude, lng: location.coords.longitude},
+      zoom: 15
+    });
+
+    function placeMarker(location) {
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+             marker.info = new google.maps.InfoWindow({
+                  content: '<b>Send a Segway to me. Its an emergency.</b> '
+                });
+              marker.info.open(map, marker);
+
+        }
+    placeMarker({lat: location.coords.latitude, lng: location.coords.longitude})
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    google.maps.event.addListener(map, 'click', function(event) {
+       placeMarker(event.latLng);
+    });
+
+
+
+
+    var markers = [];
+      // [START region_getplaces]
+      // Listen for the event fired when the user selects a prediction and retrieve
+      // more details for that place.
+      searchBox.addListener('places_changed', function() {
+        var places = searchBox.getPlaces();
+
+        if (places.length == 0) {
+          return;
+        }
+
+        // Clear out the old markers.
+        markers.forEach(function(marker) {
+          marker.setMap(null);
+        });
+        markers = [];
+
+        // For each place, get the icon, name and location.
+        var bounds = new google.maps.LatLngBounds();
+        places.forEach(function(place) {
+          var icon = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+          };
+
+          // Create a marker for each place.
+          markers.push(new google.maps.Marker({
+            map: map,
+            icon: icon,
+            title: place.name,
+            position: place.geometry.location
+          }));
+
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+        });
+        map.fitBounds(bounds);
+      });
+}
+

@@ -12,9 +12,7 @@
     </div>
 
     <div class="go_to_map">
-        <button type="button" class="btn btn-primary">
-            Find me a Segway NOW.
-        </button>
+        <%= button_to( "Find me a Segway NOW.", {:action => "go_to_map", :method => "get"}, {:class => 'btn btn-primary'}) %>
     </div>
 
 </div>

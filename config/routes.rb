@@ -55,4 +55,7 @@ Rails.application.routes.draw do
   #   end
 
     root 'landing#index'
+    get 'landing/go_to_map' => 'landing#go_to_map'
+    post 'landing/go_to_map' => 'landing#go_to_map'
+
 end
