@@ -15,7 +15,7 @@ navigator.geolocation.getCurrentPosition(GetLocation);
 function GetLocation(location) {
 
 
-    alert("JOHN the legally approved Segway (TM) driver is on his way. He knows exactly where you are.");
+    alert("JOHN the legally approved Segway driver is on his way. He knows exactly where you are.");
     console.log(location.coords.latitude);
     console.log(location.coords.longitude);
     console.log(location.coords.accuracy);
@@ -57,9 +57,9 @@ function GetLocation(location) {
 
    setTimeout(function(){ addRandomMarker(.02, .005, "Hey its JOHN. Im coming for you."); }, 1000);
    setTimeout(function(){ addRandomMarker(.01, .005, "Im on my way."); }, 5000);
-   setTimeout(function(){ addRandomMarker(.005,.0025, "I will be there in approximately 2 minutes. Please stand outside and distinguish yourself."); }, 20000);
+   setTimeout(function(){ addRandomMarker(.005,.0025, "I will be there in approximately 2 minutes. Please stand outside and distinguish yourself."); }, 17000);
    setTimeout(function(){ addRandomMarker(.0025,.00125, "Get ready for the piggyback ride of your life."); }, 27000);
-   setTimeout(function(){ addRandomMarker(.00125,.000125, "I am so close."); }, 38000);
+   setTimeout(function(){ addRandomMarker(.00125,.000125, "Getting closer."); }, 38000);
    setTimeout(function(){ addRandomMarker(.00005, 0, "Im outside. Hope on my back!"); }, 50000);
 
 

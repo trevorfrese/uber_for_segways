@@ -6,8 +6,11 @@ body{
 }
 
 html, body{
-  height:100%;
-  width:100%;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
   /*!important; background-color: #FCFBF0; */
 }
 
@@ -87,4 +90,15 @@ html, body{
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+}
+
+.firstset{
+  width:19%;
+  margin:0;
+}
+
+.thumbnail_special{
+  width: 300px;
+  height: 500px;
+  overflow: hidden;
 }
