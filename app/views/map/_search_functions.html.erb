@@ -15,10 +15,12 @@ navigator.geolocation.getCurrentPosition(GetLocation);
 function GetLocation(location) {
 
 
-    console.log("hello");
+    alert("JOHN the legally approved Segway (TM) driver is on his way. He knows exactly where you are.");
     console.log(location.coords.latitude);
     console.log(location.coords.longitude);
     console.log(location.coords.accuracy);
+    var latitude = location.coords.latitude;
+    var longitude = location.coords.longitude;
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: location.coords.latitude, lng: location.coords.longitude},
       zoom: 15
@@ -35,14 +37,40 @@ function GetLocation(location) {
               marker.info.open(map, marker);
 
         }
-    placeMarker({lat: location.coords.latitude, lng: location.coords.longitude})
+    placeMarker({lat: latitude, lng: longitude});
+
+    function addRandomMarker(distance, low_bar, message) {
+      newlat = Math.random() * distance + latitude + low_bar;
+      newlng = Math.random() * distance + longitude + low_bar;
+
+      console.log(newlat, newlng);
+      location = {lat: newlat, lng: newlng};
+      var marker = new google.maps.Marker({
+                      position: location,
+                      map: map
+                  });
+                   marker.info = new google.maps.InfoWindow({
+                        content: '<b>' + message + '</b> '
+                      });
+                    marker.info.open(map, marker);
+    }
+
+   setTimeout(function(){ addRandomMarker(.02, .005, "Hey its JOHN. Im coming for you."); }, 1000);
+   setTimeout(function(){ addRandomMarker(.01, .005, "Im on my way."); }, 6000);
+   setTimeout(function(){ addRandomMarker(.005,.0025, "I will be there in approximately 2 minutes. Please stand outside with your hands up."); }, 10000);
+   setTimeout(function(){ addRandomMarker(.0025,.00125, "Get ready for the piggyback ride of your life."); }, 14000);
+   setTimeout(function(){ addRandomMarker(.00125,.000125, "I love giving piggyback rides."); }, 19000);
+   setTimeout(function(){ addRandomMarker(.00005, 0, "Im outside. Hope on my back!"); }, 23000);
+
+
+
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-    google.maps.event.addListener(map, 'click', function(event) {
-       placeMarker(event.latLng);
-    });
+    //google.maps.event.addListener(map, 'click', function(event) {
+    //   placeMarker(event.latLng);
+    //});
 
 
 
